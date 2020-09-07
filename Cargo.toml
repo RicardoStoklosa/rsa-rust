@@ -1,0 +1,13 @@
+[package]
+name = "rsa"
+version = "0.1.0"
+authors = ["RicardoStoklosa <stoklosa.ricardo@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.7"
+num-bigint = { version = "0.3", features = ["rand"] }
+num-traits = "0.2.12"
+num-integer = "0.1.43"
