@@ -31,6 +31,7 @@ fn miller_test(mut d: BigUint, n: &BigUint) -> bool {
     false
 }
 
+// O(klog3(n))
 pub fn is_prime(num: &BigUint) -> bool {
     if num <= &one() || num == &BigUint::from(4u8) {
         return false;

@@ -29,8 +29,13 @@ fn main() {
             println!("File \"{}\" was encrypted", path);
         }
         "genkey" => {
+            let mut bits: usize = 128;
+            if args.len() == 3 {
+                bits = args[2].parse::<usize>().unwrap();
+            }
             let now = Instant::now();
-            let (private_key, public_key) = cripto::gen_key(128);
+            println!("Creating a {} key ...", bits);
+            let (private_key, public_key) = cripto::gen_key(bits);
             println!("Elapsed time: {} us", now.elapsed().as_micros());
             println!("Public: ({} {})", public_key.exp, public_key.n);
             println!("Private: ({} {})", private_key.exp, private_key.n);

@@ -20,6 +20,7 @@ fn get_phi(p: &BigUint, q: &BigUint) -> BigUint {
 pub fn gen_key(bits: usize) -> (Key, Key) {
     let p = gen_prime(bits / 2);
     let q = gen_prime(bits - bits / 2);
+    // println!("p: {} \n q: {}", p.to_string(),q.to_string());
     let n = &p * &q;
     let phi = get_phi(&p, &q);
     let e = coprime(&phi);

@@ -1,7 +1,9 @@
 use num_bigint::BigUint;
 use num_traits::zero;
 use num_traits::ToPrimitive;
-
+// ABC
+// 65 66 67
+// 65 * 255 ^ 2 + 66 * 255 ^ 1 + 67 * 255 ^ 0 = 4243522
 pub fn parse_to_num(message: &String) -> Vec<BigUint> {
     let len = message.chars().count();
     let mut out = Vec::new();
@@ -18,6 +20,9 @@ pub fn parse_to_num(message: &String) -> Vec<BigUint> {
     out
 }
 
+// 4243522 / 255^2 = 65 => 'A' | 4243522 % 255^2 = 16897
+// 16897 / 255^1 = 66 => 'B' | 16897 % 255^1 = 67
+// 67 / 255^0 = 67 => 'C' 
 pub fn parse_to_str(message: &Vec<BigUint>) -> String {
     let mut out = String::new();
     for i in message {

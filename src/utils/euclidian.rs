@@ -1,6 +1,7 @@
 use num_bigint::BigUint;
 use num_traits::{one, zero};
 
+// Algoritimo de euclides extendido modificado
 pub fn mod_inv(u: &BigUint, v: &BigUint) -> BigUint {
     let mut q: BigUint;
     let mut t1: BigUint;
